@@ -26,7 +26,6 @@ function displayCartItems() {
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">${item.name}</h5>
-                    <p class="card-text">${item.description}</p>
                     <p class="card-text">Rp ${item.price.toLocaleString()}</p>
                     <button class="btn btn-danger btn-sm removeItem" data-index="${index}">Hapus</button>
                 </div>
@@ -67,5 +66,5 @@ document.getElementById('confirmPurchase').addEventListener('click', function() 
     // Kosongkan keranjang setelah pembelian berhasil
     cartItems = [];
     localStorage.setItem('cartItems', JSON.stringify(cartItems)); // Reset keranjang di localStorage
-    displayCartItems(); // Perbarui tampilan keranjang
+    displayCartItems(); // Update tampilan keranjang
 });
