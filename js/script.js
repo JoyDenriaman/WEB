@@ -1,25 +1,24 @@
 // Data produk
 const items = [
-    ['001', 'XIOMI 13T', 6500000, 'Hp Flagship, collab dengan Leica', 'Images/13T.jpg'],
-    ['002', 'INFINIX NOTE 40PRO', 3000000, 'Hp Murah dan Terjangkau', 'Images/INFINIX.webp'],
-    ['003', 'LG', 5000000, 'Hp merek Lg', 'Images/LG.jpg'],
-    ['004', 'SONY', 3000000, 'Kamera yang bagus', 'Images/SONY.jpg'],
-    ['005', 'Samsung Galaxy S23', 15000000, 'HP flagship Samsung dengan kamera canggih', 'Images/SamsungS23.jpg'],
-    ['006', 'iPhone 14 Pro', 18000000, 'HP premium Apple dengan Dynamic Island', 'Images/iPhone14Pro.jpg'],
-    ['007', 'Xiaomi Redmi Note 12', 3000000, 'HP murah dengan performa unggul', 'Images/RedmiNote12.jpg'],
-    ['008', 'Oppo Reno 8', 4500000, 'HP stylish dengan kamera portrait', 'Images/OppoReno8.jpg'],
-    ['009', 'Realme 11 Pro', 4000000, 'HP Realme dengan layar AMOLED', 'Images/Realme11Pro.jpg'],
-    ['010', 'Vivo V27', 5000000, 'HP Vivo dengan kamera cahaya malam', 'Images/VivoV27.jpg'],
-    ['011', 'Google Pixel 7', 9000000, 'HP Google dengan Android murni', 'Images/Pixel7.jpg']
+    ['001', 'XIOMI 13T', 6500000, 'Hp Flagship, collab dengan Leica', '13T.jpg'],
+    ['002', 'INFINIX NOTE 40PRO', 3000000, 'Hp Murah dan Terjangkau', 'INFINIX.webp'],
+    ['003', 'LG', 5000000, 'Hp merek Lg', 'LG.jpg'],
+    ['004', 'SONY', 3000000, 'Kamera yang bagus', 'SONY.jpg'],
+    ['005', 'Samsung Galaxy S23', 15000000, 'HP flagship Samsung dengan kamera canggih', 'SamsungS23.jpg'],
+    ['006', 'iPhone 14 Pro', 18000000, 'HP premium Apple dengan Dynamic Island', 'iPhone14Pro.jpg'],
+    ['007', 'Xiaomi Redmi Note 12', 3000000, 'HP murah dengan performa unggul', 'RedmiNote12.jpg'],
+    ['008', 'Oppo Reno 8', 4500000, 'HP stylish dengan kamera portrait', 'OppoReno8.jpg'],
+    ['009', 'Realme 11 Pro', 4000000, 'HP Realme dengan layar AMOLED', 'Realme11Pro.jpg'],
+    ['010', 'Vivo V27', 5000000, 'HP Vivo dengan kamera cahaya malam', 'VivoV27.jpg'],
+    ['011', 'Google Pixel 7', 9000000, 'HP Google dengan Android murni', 'Pixel7.jpg']
 ];
 
-// Data keranjang
 let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
-// Fungsi menampilkan produk
+// Menampilkan produk
 function displayItems(itemsList) {
     const listBarang = document.getElementById('listBarang');
-    if (!listBarang) return; // Jika elemen tidak ditemukan, keluar dari fungsi
+    if (!listBarang) return;
 
     listBarang.innerHTML = '';
     itemsList.forEach(item => {
@@ -38,11 +37,9 @@ function displayItems(itemsList) {
         listBarang.appendChild(card);
     });
 }
-
-// Menampilkan semua produk saat halaman dimuat
 displayItems(items);
 
-// Fungsi pencarian produk
+// Pencarian produk
 document.getElementById('formItem')?.addEventListener('submit', function (event) {
     event.preventDefault();
     const keyword = document.getElementById('keyword').value.toLowerCase();
@@ -50,7 +47,7 @@ document.getElementById('formItem')?.addEventListener('submit', function (event)
     displayItems(filteredItems);
 });
 
-// Fungsi menambahkan item ke keranjang
+// Tambahkan ke keranjang
 document.getElementById('listBarang')?.addEventListener('click', function (event) {
     if (event.target.classList.contains('addCart')) {
         const id = event.target.getAttribute('data-id');
@@ -59,12 +56,12 @@ document.getElementById('listBarang')?.addEventListener('click', function (event
         cartItems.push({ id, name, price });
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-        // Perbarui tampilan keranjang
+        // Perbarui tampilan
         updateCartStatus();
     }
 });
 
-// Fungsi memperbarui status keranjang
+// Perbarui status tombol Keranjang dan Checkout
 function updateCartStatus() {
     const cartButton = document.getElementById('cart');
     const checkoutButton = document.getElementById('checkout');
@@ -77,14 +74,5 @@ function updateCartStatus() {
     }
 }
 
-// Inisialisasi status keranjang saat halaman dimuat
+// Inisialisasi status tombol
 updateCartStatus();
-
-// Fungsi navigasi ke halaman checkout
-document.getElementById('cart')?.addEventListener('click', function () {
-    window.location.href = 'checkout.html';
-});
-
-document.getElementById('checkout')?.addEventListener('click', function () {
-    window.location.href = 'checkout.html';
-});
