@@ -17,15 +17,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <form id="formItem" class="form-inline">
-                        <input type="text" id="keyword" placeholder="Cari barang..." class="form-control mr-2">
-                        <button type="submit" class="btn btn-primary">Cari</button>
+                    <form id="formItem">
+                        <input type="text" id="keyword" placeholder="Cari barang..." class="form-control">
+                        <button type="submit" class="btn btn-primary mt-2">Cari</button>
                     </form>
                 </li>
-                <li class="nav-item mx-2">
-                    <button id="cart" class="btn btn-primary">
-                        <i class="fas fa-shopping-cart"></i> Keranjang (<span id="cartCount">0</span>)
-                    </button>
+                <li class="nav-item">
+                    <button id="cart" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Keranjang (0)</button>
                 </li>
                 <li class="nav-item">
                     <button id="checkout" class="btn btn-success" disabled>Checkout</button>
@@ -36,9 +34,7 @@
 </nav>
 
 <div class="container mt-4">
-    <div class="row" id="listBarang">
-        <!-- Barang akan ditampilkan di sini -->
-    </div>
+    <div class="row" id="listBarang"></div>
 </div>
 
 <script src="js/script.js"></script>
