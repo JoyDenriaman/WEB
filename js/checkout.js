@@ -21,9 +21,10 @@ function displayCartItems() {
         const col = document.createElement('div');
         col.className = 'col-md-4 mb-4';
 
-        // Membuat card hanya dengan nama produk, deskripsi dan harga
+        // Membuat card dengan gambar produk
         const row = `
             <div class="card">
+                <img src="${item.image}" class="card-img-top" alt="${item.name}">
                 <div class="card-body">
                     <h5 class="card-title">${item.name}</h5>
                     <p class="card-text">${item.description}</p>
