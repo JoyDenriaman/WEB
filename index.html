@@ -13,6 +13,13 @@
     <div class="container">
         <a class="navbar-brand" href="#">Mini Ponsel</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <form id="formItem">
+    <input type="text" id="keyword" placeholder="Cari barang..." class="form-control">
+    <button type="submit" class="btn btn-primary mt-2">Cari</button>
+</form>
+<button id="cart" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Keranjang (0)</button>
+<button id="checkout" class="btn btn-success" disabled>Checkout</button>
+
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -33,10 +40,8 @@
         </div>
     </div>
 </nav>
+<div class="row" id="listBarang"></div>
 
-    <div class="container mt-4">
-        <div class="row" id="listBarang"></div>
-    </div>
 
     <script src="js/script.js"></script>
 </body>
