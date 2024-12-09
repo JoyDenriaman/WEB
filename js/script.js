@@ -53,14 +53,6 @@ document.getElementById('listBarang')?.addEventListener('click', function (event
         const id = event.target.getAttribute('data-id');
         const name = event.target.getAttribute('data-name');
         const price = parseInt(event.target.getAttribute('data-price'));
-
-        // Periksa apakah item sudah ada dalam keranjang
-        const existingItem = cartItems.find(item => item.id === id);
-        if (existingItem) {
-            alert(`${name} sudah ada dalam keranjang.`);
-            return;
-        }
-
         cartItems.push({ id, name, price });
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
@@ -75,7 +67,6 @@ function updateCartStatus() {
     const checkoutButton = document.getElementById('checkout');
     cartButton.innerHTML = `<i class="fas fa-shopping-cart"></i> Keranjang (${cartItems.length})`;
 
-    // Aktifkan atau nonaktifkan tombol checkout
     if (cartItems.length > 0) {
         checkoutButton.disabled = false;
     } else {
