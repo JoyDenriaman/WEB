@@ -1,16 +1,16 @@
 // Data produk
 const items = [
-    ['001', 'XIOMI 13T', 6500000, 'Hp Flagship, collab dengan Leica', 'images/13T.jpg'],
-    ['002', 'INFINIX NOTE 40PRO', 3000000, 'Hp Murah dan Terjangkau', 'images/INFINIX.webp'],
-    ['003', 'LG', 5000000, 'Hp merek Lg', 'images/LG.jpg'],
-    ['004', 'SONY', 3000000, 'Kamera yang bagus', 'images/SONY.jpg'],
-    ['005', 'Samsung Galaxy S23', 15000000, 'HP flagship Samsung dengan kamera canggih', 'images/SamsungS23.jpg'],
-    ['006', 'iPhone 14 Pro', 18000000, 'HP premium Apple dengan Dynamic Island', 'images/iPhone14Pro.jpg'],
-    ['007', 'Xiaomi Redmi Note 12', 3000000, 'HP murah dengan performa unggul', 'images/RedmiNote12.jpg'],
-    ['008', 'Oppo Reno 8', 4500000, 'HP stylish dengan kamera portrait', 'images/OppoReno8.jpg'],
-    ['009', 'Realme 11 Pro', 4000000, 'HP Realme dengan layar AMOLED', 'images/Realme11Pro.jpg'],
-    ['010', 'Vivo V27', 5000000, 'HP Vivo dengan kamera cahaya malam', 'images/VivoV27.jpg'],
-    ['011', 'Google Pixel 7', 9000000, 'HP Google dengan Android murni', 'images/Pixel7.jpg']
+    ['001', 'XIOMI 13T', 6500000, 'Hp Flagship, collab dengan Leica', 'Images/13T.jpg'],
+    ['002', 'INFINIX NOTE 40PRO', 3000000, 'Hp Murah dan Terjangkau', 'Images/INFINIX.webp'],
+    ['003', 'LG', 5000000, 'Hp merek Lg', 'Images/LG.jpg'],
+    ['004', 'SONY', 3000000, 'Kamera yang bagus', 'Images/SONY.jpg'],
+    ['005', 'Samsung Galaxy S23', 15000000, 'HP flagship Samsung dengan kamera canggih', 'Images/SamsungS23.jpg'],
+    ['006', 'iPhone 14 Pro', 18000000, 'HP premium Apple dengan Dynamic Island', 'Images/iPhone14Pro.jpg'],
+    ['007', 'Xiaomi Redmi Note 12', 3000000, 'HP murah dengan performa unggul', 'Images/RedmiNote12.jpg'],
+    ['008', 'Oppo Reno 8', 4500000, 'HP stylish dengan kamera portrait', 'Images/OppoReno8.jpg'],
+    ['009', 'Realme 11 Pro', 4000000, 'HP Realme dengan layar AMOLED', 'Images/Realme11Pro.jpg'],
+    ['010', 'Vivo V27', 5000000, 'HP Vivo dengan kamera cahaya malam', 'Images/VivoV27.jpg'],
+    ['011', 'Google Pixel 7', 9000000, 'HP Google dengan Android murni', 'Images/Pixel7.jpg']
 ];
 
 // Data keranjang
