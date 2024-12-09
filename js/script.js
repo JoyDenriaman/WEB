@@ -13,12 +13,13 @@ const items = [
     ['011', 'Google Pixel 7', 9000000, 'HP Google dengan Android murni', 'images/Pixel7.jpg']
 ];
 
+// Data keranjang
 let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
-// Menampilkan produk
+// Fungsi menampilkan produk
 function displayItems(itemsList) {
     const listBarang = document.getElementById('listBarang');
-    if (!listBarang) return;
+    if (!listBarang) return; // Jika elemen tidak ditemukan, keluar dari fungsi
 
     listBarang.innerHTML = '';
     itemsList.forEach(item => {
@@ -37,9 +38,11 @@ function displayItems(itemsList) {
         listBarang.appendChild(card);
     });
 }
+
+// Menampilkan semua produk saat halaman dimuat
 displayItems(items);
 
-// Pencarian produk
+// Fungsi pencarian produk
 document.getElementById('formItem')?.addEventListener('submit', function (event) {
     event.preventDefault();
     const keyword = document.getElementById('keyword').value.toLowerCase();
@@ -47,7 +50,7 @@ document.getElementById('formItem')?.addEventListener('submit', function (event)
     displayItems(filteredItems);
 });
 
-// Tambahkan ke keranjang
+// Fungsi menambahkan item ke keranjang
 document.getElementById('listBarang')?.addEventListener('click', function (event) {
     if (event.target.classList.contains('addCart')) {
         const id = event.target.getAttribute('data-id');
@@ -56,12 +59,12 @@ document.getElementById('listBarang')?.addEventListener('click', function (event
         cartItems.push({ id, name, price });
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-        // Perbarui tampilan
+        // Perbarui tampilan keranjang
         updateCartStatus();
     }
 });
 
-// Perbarui status tombol Keranjang dan Checkout
+// Fungsi memperbarui status keranjang
 function updateCartStatus() {
     const cartButton = document.getElementById('cart');
     const checkoutButton = document.getElementById('checkout');
@@ -74,10 +77,10 @@ function updateCartStatus() {
     }
 }
 
-// Inisialisasi status tombol
+// Inisialisasi status keranjang saat halaman dimuat
 updateCartStatus();
 
-// Navigasi ke halaman checkout
+// Fungsi navigasi ke halaman checkout
 document.getElementById('cart')?.addEventListener('click', function () {
     window.location.href = 'checkout.html';
 });
